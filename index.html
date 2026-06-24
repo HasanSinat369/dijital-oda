@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dijital Oda</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="scene" id="scene" aria-label="Dijital oda sahnesi">
+    <img id="roomImage" class="room-image" src="oda.png" alt="Dijital oda" draggable="false" />
+
+    <div class="hud" aria-label="Etkileşim durumu">
+      <div class="counter-panel" id="counterPanel">
+        <span class="counter-text">Etkileşimli Nesneler</span>
+        <span class="counter-value"><span id="visitedCount">0</span>/<span id="totalCount">9</span></span>
+      </div>
+      <button class="hint-button" id="hintButton" type="button" aria-pressed="false" aria-label="Nesnelerin yerlerini göster">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 2.44 1.25 4.58 3.15 5.84.53.35.85.92.85 1.55V17c0 .55.45 1 1 1h4c.55 0 1-.45 1-1v-.61c0-.63.32-1.2.85-1.55C17.75 13.58 19 11.44 19 9c0-3.87-3.13-7-7-7zm-2 17h4v1c0 1.1-.9 2-2 2s-2-.9-2-2v-1z" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Parlama katmanı: Nesneler kutu/path olarak değil, şeffaf PNG maske olarak parlar. -->
+    <div id="glowLayer" class="glow-layer" aria-hidden="true"></div>
+
+    <div id="speechBubble" class="speech-bubble" aria-hidden="true">
+      <div id="bubbleTitle" class="speech-title"></div>
+      <div id="bubbleText" class="speech-text"></div>
+    </div>
+  </main>
+
+  <script src="hitmasks.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
